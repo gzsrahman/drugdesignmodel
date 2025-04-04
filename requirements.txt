@@ -1,0 +1,26 @@
+#torch==2.2.1
+#torchdata==0.8.0
+#dgl==2.1.0
+pytorch==2.1.0
+torchdata==0.7.0
+#dgl==2.2.0
+dgl==2.1.0
+rdkit
+tensorflow
+pandas
+matplotlib
+numpy
+networkx
+wandb
+pyyaml
+dgllife
+
+conda install pytorch=2.1.0 -c pytorch
+conda install torchdata=0.7.0 -c pytorch
+pip install dgl==2.1.0 --extra-index-url https://data.dgl.ai/wheels
+conda install -c conda-forge rdkit tensorflow pandas matplotlib numpy networkx wandb pyyaml dgllife swig boost-cpp sphinx sphinx_rtd_theme lapack openblas
+conda install -c conda-forge vina
+
+export PYTHONPATH=$(pwd)
+export DYLD_LIBRARY_PATH="$CONDA_PREFIX/lib:$DYLD_LIBRARY_PATH"
+
