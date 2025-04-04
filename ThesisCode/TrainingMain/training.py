@@ -52,7 +52,8 @@ class Trainer:
     def Train(self):
         if not os.path.isdir(f"./{self.run_title}"):
             os.mkdir(f"./{self.run_title}")
-        subprocess.run(['cp', './config_small.yaml', f"./{self.run_title}/config.yaml" ])
+        # subprocess.run(['cp', './config_small.yaml', f"./{self.run_title}/config.yaml" ])
+        subprocess.run(['cp', './TrainingMain/config_small.yaml', f"./{self.run_title}/config.yaml" ])
 
         print(f"running supervised training for {self.sv_epochs} epochs")
         self.sv_trainer.Train(self.sv_epochs)

@@ -93,8 +93,12 @@ def make(config):
     # DEFININING MODULES
     ENV = ChemEnv(NUM_NODE_FEATS, REWARD_MODULE, MOL_FEATURIZER, WRITER)
     
-    ACTOR = generateActor(config['ACTOR_VARIABLES'], ACTOR_RESTART_PATH).cuda()
-    CRITIC = generateCritic(config['CRITIC_VARIABLES'], CRITIC_RESTART_PATH).cuda()
+    if torch.cuda.is_available():
+        ACTOR = generateActor(config['ACTOR_VARIABLES'], ACTOR_RESTART_PATH).cuda()
+        CRITIC = generateCritic(config['CRITIC_VARIABLES'], CRITIC_RESTART_PATH).cuda()
+    else:
+        ACTOR = generateActor(config['ACTOR_VARIABLES'], ACTOR_RESTART_PATH).to('cpu')
+        CRITIC = generateCritic(config['CRITIC_VARIABLES'], CRITIC_RESTART_PATH).to('cpu')
     
 
     PPO = PPOTrainer(ENV, PPO_BATCH_SIZE, TIMESTEPS_PER_ITERATION,

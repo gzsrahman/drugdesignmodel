@@ -24,7 +24,7 @@ def main():
     
     
     
-    with open('./config_small.yaml') as file:
+    with open('./TrainingMain/config_small.yaml') as file:
         config = yaml.safe_load(file)
     with wandb.init(
         project="DrugNet",
@@ -34,6 +34,8 @@ def main():
     ): 
         run_title = config['RUN_TITLE'] 
         print(f'starting run with title: {run_title} ')
+        print("Current Working Directory:", os.getcwd())
+        # print(config['SUPERVISED_TRAINING_VARIABLES']['PATH'])
         session = make(config)[0]
         session.Train()
     

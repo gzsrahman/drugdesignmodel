@@ -161,7 +161,10 @@ class SupervisedTrainingWrapper():
         self.schedule = torch.optim.lr_scheduler.ExponentialLR(
             self.optim, lr_decay)
         weight = torch.tensor([.1 for i in range(70)])
-        weight = weight.cuda()
+        if torch.cuda.is_available():
+            weight = weight.cuda()
+        else:
+            weight = weight.to('cpu')
         self.loss_fn = torch.nn.CrossEntropyLoss()
         self.chunk_idx = 0
 

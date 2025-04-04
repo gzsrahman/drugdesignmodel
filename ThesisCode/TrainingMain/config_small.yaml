@@ -56,7 +56,8 @@ SUPERVISED_TRAINING_VARIABLES:
   DECAY : 0.916
   SUPERVISED_BATCH_SIZE : 256
   DATASET_SIZE : 507528
-  PATH : '../GraphDecomp/graph_decomp/graphs'
+  # PATH : '../GraphDecomp/graph_decomp/graphs'
+  PATH : './GraphDecomp/graph_decomp/graphs'
 
 FINAL_TRAINING_VARIABLES:
   SV_EPOCHS : 0

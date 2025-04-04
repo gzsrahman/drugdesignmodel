@@ -216,3 +216,7 @@ CLEAN/__pycache__/PPO.cpython-37.pyc
 CLEAN/__pycache__
 CLEAN/enviroment/__pycache__/ChemEnv.cpython-37.pyc
 CLEAN/logs_test/_logs/tb/events.out.tfevents*
+
+THESISCODE/logs
+THESISCODE/wandb
+THESISCODE/GraphDecomp/graph_decomp

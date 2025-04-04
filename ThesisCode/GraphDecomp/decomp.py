@@ -15,7 +15,7 @@ def main():
     parser = argparse.ArgumentParser(description="graph_decomp")
     parser.add_argument("--path",type=str,required=True)
     args = parser.parse_args()
-    drugs = pd.read_csv(args.path,error_bad_lines=False,delimiter=';')
+    drugs = pd.read_csv(args.path,delimiter=';', on_bad_lines='skip')
     smiles_values = drugs['Smiles'].values
     DataBaseGenerationONEFILE(smiles_values)
     

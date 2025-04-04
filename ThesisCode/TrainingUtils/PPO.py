@@ -91,8 +91,8 @@ class PPOTrainer:
     def to_device(self):
         """put actor and critic onto gpu
         """
-        self.actor.cuda()
-        self.critic.cuda()
+        self.actor.to(DEVICE)
+        self.critic.to(DEVICE)
 
     def assignActor(self, new_actor):
 
@@ -527,4 +527,10 @@ class PPOTrainer:
 
         
         # return advantage.squeeze(), new_log_prob
-        return advantage_list_cat.squeeze().cuda(), log_prob_list_cat.cuda()
+        # changed to device
+        # return advantage_list_cat.squeeze().cuda(), log_prob_list_cat.cuda()
+        # if torch.cuda.is_available():
+        #     return advantage_list_cat.squeeze().cuda(), log_prob_list_cat.cuda()
+        # else:
+        #     return advantage_list_cat.squeeze().to('cpu), log_prob_list_cat.to('cpu')
+        return advantage_list_cat.squeeze().to('cpu'), log_prob_list_cat.to('cpu')

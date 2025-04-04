@@ -170,7 +170,8 @@ class ChemEnv(object):
         while True:
             graph_id = random.randint(1, 500000)  ###so lazy erggg
             graph, graph_dict = dgl.load_graphs(
-                "../GraphDecomp/graph_decomp/graphs", [graph_id]
+                # "../GraphDecomp/graph_decomp/graphs", [graph_id]
+                "./GraphDecomp/graph_decomp/graphs", [graph_id]
             )
             self.idx = graph_id
 

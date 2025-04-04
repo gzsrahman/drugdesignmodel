@@ -273,7 +273,7 @@ def DataBaseGenerationONEFILE(smiles):
                     "actions" : torch.tensor(action_list)}
 
 
-    if not os.path.isdir('./graph_decomp'):
-        os.mkdir('./graph_decomp')
-    dgl.save_graphs('./graph_decomp/graphs',list(graph_list), graph_labels)
+    if not os.path.isdir('./GraphDecomp/graph_decomp'):
+        os.mkdir('./GraphDecomp/graph_decomp')
+    dgl.save_graphs('./GraphDecomp/graph_decomp/graphs',list(graph_list), graph_labels)
 

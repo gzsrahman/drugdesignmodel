@@ -3,3 +3,9 @@ A policy gradient approach for discovering novel drug candiates with desirable Q
 
 If anyone is coming from the thesis please look at ThesisCode, everything is organizationally reworks and ThesisCode has all thats important
    
+# Gazi Notes
+See requirements.txt
+See setup.sh
+Find ".to('cpu')"
+Find "self.actor.to(DEVICE)"
+Find "self.critic.to(DEVICE)"
