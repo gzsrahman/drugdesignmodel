@@ -121,6 +121,7 @@ class PPOTrainer:
         """
         t_so_far = 0
         checkpoints = [(200000*(i+1),i) for i in range(total_timesteps//200000)]
+        # checkpoints = [(10*(i+1),i) for i in range(total_timesteps//10)]
         # ALG STEP 2
         while t_so_far < total_timesteps:
             if t_so_far > checkpoints[0][0]:
